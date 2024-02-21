@@ -1,4 +1,4 @@
-package TCP_iterativo;
+package TCP_concorrente;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -8,12 +8,12 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-public class IterClient {
+public class Client {
     public static void main(String[] args) {
         try {
             // inizializzazione
             InetAddress ia = InetAddress.getLocalHost();
-            InetSocketAddress isa = new InetSocketAddress(ia, Integer.parseInt(args[0]));
+            InetSocketAddress isa = new InetSocketAddress(ia, 62128);
             Socket client = new Socket();
             client.connect(isa);
             InputStreamReader isr = new InputStreamReader(System.in);
